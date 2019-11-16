@@ -168,6 +168,8 @@ GameObject:
   - component: {fileID: 2339828228633581802}
   - component: {fileID: 566598816692525036}
   - component: {fileID: 2349660493458278934}
+  - component: {fileID: 6751011259681200813}
+  - component: {fileID: 8366479304257281167}
   m_Layer: 5
   m_Name: S_Input
   m_TagString: Untagged
@@ -232,3 +234,29 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6751011259681200813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715212039779260450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b313e0b2594bcc344b530f3c060e7e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8366479304257281167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715212039779260450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef97ececcca1a5b478516b3b57d9842b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputKey: 0
+  actionNodes: []

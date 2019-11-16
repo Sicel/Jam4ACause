@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// An action node that will keep track of the current event and whether or not it's locked into place
@@ -26,6 +27,7 @@ public class ActionNode : MonoBehaviour
             }
         }
     }
+    public TextMeshProUGUI TextMesh { get => gameObject.GetComponent<TextMeshProUGUI>(); }
 
     /// <summary>
     /// Function to trigger the game event for the action node

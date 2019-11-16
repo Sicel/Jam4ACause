@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// An input node that will keep track of an input key and a set of action nodes
@@ -12,6 +13,9 @@ public class InputNode : MonoBehaviour
     [SerializeField]
     private ActionNode[] actionNodes = new ActionNode[0];
     private WaitForSeconds wait = new WaitForSeconds(0.3f);
+
+    public ActionNode[] ActionNodes { get => actionNodes; }
+    public TextMeshProUGUI TextMesh { get => gameObject.GetComponent<TextMeshProUGUI>(); }
 
     /// <summary>
     /// Property to get and set the input key

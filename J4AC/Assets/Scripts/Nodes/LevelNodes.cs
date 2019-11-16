@@ -8,6 +8,8 @@ public class LevelNodes : MonoBehaviour
     private InputNode[] inputNodes = new InputNode[0];
     private bool checkingForInput = false;
 
+    public InputNode[] InputNodes { get => InputNodes; }
+
     private void Update()
     {
         if(checkingForInput)
