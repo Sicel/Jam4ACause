@@ -35,6 +35,13 @@ public class DoorTile : Tile
     /// </summary>
     void Update()
     {
+        //@todo Remove me
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ToggleDoor();
+        }
+
+
         // Update which sprite/gameobject is displayed depending on whether or not the door is open
         if (doorOpen != null)
             doorOpen.SetActive(isDoorOpen);
@@ -67,4 +74,28 @@ public class DoorTile : Tile
     }
 
 
+    #region EVENT HANDLERS
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void OpenDoor()
+    {
+        isDoorOpen = true;
+    }
+
+
+    public void CloseDoor()
+    {
+        isDoorOpen = false;
+    }
+
+
+    public void ToggleDoor()
+    {
+        isDoorOpen = !isDoorOpen;
+    }
+
+    #endregion
 }

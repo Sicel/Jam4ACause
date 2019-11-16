@@ -181,7 +181,7 @@ public class LevelGrid : MonoBehaviour
         int y = gridCoordinate.y;
 
         // If we're out of bounds of this grid, return false.
-        if (x < 0 || x >= gridDimensions.x || y < 0 || y > gridDimensions.y)
+        if (x < 0 || x >= gridDimensions.x || y < 0 || y >= gridDimensions.y)
         {
             return false;
         }

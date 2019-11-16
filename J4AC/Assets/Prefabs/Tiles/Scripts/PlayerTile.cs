@@ -10,6 +10,9 @@ public class PlayerTile : Tile
     public float movementLerpTime = 0.3f;
     private float movementLerpTimer;
 
+    [Range(0.0f, 1.0f)]
+    public float invalidLerpNudgeRatio = 0.25f;
+
     // Keep track of start and end location of the lerp (separate from location)
     private Vector3 lerpSource;
     private Vector3 lerpDestination;
@@ -45,6 +48,16 @@ public class PlayerTile : Tile
         {
             MoveRight();
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            MoveUp();
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            MoveDown();
+        }
 #endif
 
 
@@ -61,7 +74,24 @@ public class PlayerTile : Tile
             // Otherwise (nudge against it)s
             else
             {
+                Vector3 position = Vector3.zero;
 
+                if (movementLerpTimer < invalidLerpNudgeRatio * movementLerpTime)
+                {
+                    // First quarter of the time, move out to a quarter-ish
+                    position = lerpSource + (movementLerpTimer / movementLerpTime) * (lerpDestination - lerpSource);
+                }
+                else
+                {
+                    // Remainder of the time, move back
+                        // position = stating location + percentage moved * displacement
+                    position = (lerpSource + invalidLerpNudgeRatio * (lerpDestination - lerpSource)) 
+                        + ( (movementLerpTimer - invalidLerpNudgeRatio * movementLerpTime) / ( (1.0f - invalidLerpNudgeRatio) * movementLerpTime)) 
+                        * (lerpSource - (lerpSource + invalidLerpNudgeRatio * (lerpDestination - lerpSource)));
+                }
+
+
+                transform.localPosition = position;
             }
 
             if (movementLerpTimer > movementLerpTime)
@@ -118,6 +148,28 @@ public class PlayerTile : Tile
     {
         Vector2Int des = location;
         des.x = location.x + 1;
+
+        TryToMoveTo(des);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void MoveUp()
+    {
+        Vector2Int des = location;
+        des.y = location.y + 1;
+
+        TryToMoveTo(des);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void MoveDown()
+    {
+        Vector2Int des = location;
+        des.y = location.y - 1;
 
         TryToMoveTo(des);
     }
