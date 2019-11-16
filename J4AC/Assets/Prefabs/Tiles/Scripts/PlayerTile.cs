@@ -75,8 +75,6 @@ public class PlayerTile : Tile
                 isLerping = false;
             }
         }
-
-        // Move to front
     }
 
     public override bool CanGoThrough()
