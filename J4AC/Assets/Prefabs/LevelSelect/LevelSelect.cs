@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
     public GameObject DropdownObject;
-    private Dropdown dropdown;
+    private TMPro.TMP_Dropdown dropdown;
 
     int level;
 
     private void Awake()
     {
         if (DropdownObject != null)
-            dropdown = DropdownObject.GetComponent<Dropdown>();
+            dropdown = DropdownObject.GetComponent<TMPro.TMP_Dropdown>();
     }
 
     // Start is called before the first frame update
@@ -39,5 +40,7 @@ public class LevelSelect : MonoBehaviour
     {
         // @todo
         Debug.Log("Loading level " + level + ".\n");
+
+        SceneManager.LoadScene("Level" + level);
     }
 }
