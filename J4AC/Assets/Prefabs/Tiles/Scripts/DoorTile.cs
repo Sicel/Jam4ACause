@@ -35,13 +35,6 @@ public class DoorTile : Tile
     /// </summary>
     void Update()
     {
-        //@todo Remove me
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ToggleDoor();
-        }
-
-
         // Update which sprite/gameobject is displayed depending on whether or not the door is open
         if (doorOpen != null)
             doorOpen.SetActive(isDoorOpen);

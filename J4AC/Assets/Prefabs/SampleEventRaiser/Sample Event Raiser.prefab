@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6173083453331006912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2305232910110800474}
+  - component: {fileID: 1443318332967849391}
+  m_Layer: 0
+  m_Name: Sample Event Raiser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2305232910110800474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173083453331006912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1443318332967849391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173083453331006912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1027cb7044fe5947a9f23c6ddd917ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveLeft: {fileID: 11400000, guid: b4995a4012034f846af538f1bcf0cc8a, type: 2}
+  MoveRight: {fileID: 11400000, guid: bb22cc7ab6c2a1446ab1cc2ada834e11, type: 2}
+  MoveUp: {fileID: 11400000, guid: c6ffcb5d9c23e5741bbb6129fae6e88b, type: 2}
+  MoveDown: {fileID: 11400000, guid: 919627b62f918894cb7e3da7bd35e041, type: 2}
+  DoorOpen: {fileID: 11400000, guid: 0978524fab6405f48a3f3e698b749535, type: 2}
+  DoorClose: {fileID: 11400000, guid: 04c57c8d6ae1e51438119af4cee1ff74, type: 2}
+  DoorToggle: {fileID: 11400000, guid: b0182bec105059e4183f63861354e8ef, type: 2}

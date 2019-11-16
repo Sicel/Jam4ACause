@@ -1,6 +1,4 @@
-﻿#define SELF_MOVE_DETECTION
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,30 +35,6 @@ public class PlayerTile : Tile
     // Update is called once per frame
     void Update()
     {
-
-#if SELF_MOVE_DETECTION
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            MoveLeft();
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            MoveRight();
-        }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            MoveUp();
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            MoveDown();
-        }
-#endif
-
-
         if (isLerping)
         {
             movementLerpTimer += Time.deltaTime;
