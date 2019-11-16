@@ -47,7 +47,7 @@ public class DoorTile : Tile
             doorOpen.SetActive(isDoorOpen);
 
         if (doorClosed != null)
-            doorOpen.SetActive(!isDoorOpen);
+            doorClosed.SetActive(!isDoorOpen);
     }
 
 

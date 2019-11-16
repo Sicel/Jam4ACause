@@ -26,7 +26,7 @@ public class PlayerTile : Tile
     void Start()
     {
         // Add this tile for tracking through the LevelGrid
-        LevelGrid.CurrLevelGrid.AddTile(this.gameObject);
+        LevelGrid.CurrLevelGrid.AddPlayerTile(this.gameObject);
 
         // Initialize settings
         isLerping = false;

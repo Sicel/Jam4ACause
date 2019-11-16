@@ -26,11 +26,11 @@ public class LevelGrid : MonoBehaviour
 
     // Helper instances of the player
     private GameObject PlayerElement;
-    private PlayerTile playerTile;
+    public PlayerTile Player { get; private set; }
 
     // Helper instances of the goal
     private GameObject GoalElement;
-    private Tile goalTile;
+    public GoalTile Goal { get; private set; }
 
 
     /// <summary>
@@ -157,16 +157,34 @@ public class LevelGrid : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Adds a tile to be kept tracked of and monitored.
+    /// Also sets it in PlayerElement (the GameObject) and the Tile (PlayerTile) 
+    /// for ease of tracking. 
+    /// </summary>
+    /// <param name="tile"></param>
     public void AddPlayerTile(GameObject tile)
     {
         AddTile(tile);
 
         PlayerElement = tile;
-        playerTile = PlayerElement.GetComponent<PlayerTile>();
+        Player = PlayerElement.GetComponent<PlayerTile>();
     }
 
 
+    /// <summary>
+    /// Adds a tile to be kept tracked of and monitored.
+    /// Also sets it in GoalElement (the GameObject) and the Tile (GoalTile) 
+    /// for ease of tracking. 
+    /// </summary>
+    /// <param name="tile"></param>
+    public void AddGoalTile(GameObject tile)
+    {
+        AddTile(tile);
 
+        GoalElement = tile;
+        Goal = GoalElement.GetComponent<GoalTile>();
+    }
 
 
     /// <summary>
@@ -206,6 +224,7 @@ public class LevelGrid : MonoBehaviour
 
         return canGoThrough;
     }
+
 
     public bool CanGoThroughTile(int x, int y)
     {
