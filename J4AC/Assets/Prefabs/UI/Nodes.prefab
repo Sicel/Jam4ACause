@@ -1099,6 +1099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Content
       objectReference: {fileID: 0}
+    - target: {fileID: 1876604804007730158, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Content
+      objectReference: {fileID: 0}
     - target: {fileID: 1876604804007730153, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1203,6 +1208,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876604804007730152, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
+        type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876604804007730152, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c26f848aa1afc4bb43e7feb6a720c3, type: 3}
