@@ -15,4 +15,19 @@ public class ClearMenu : Menu
     {
         
     }
+
+    public void ReplayLevel()
+    {
+        // @todo
+    }
+
+    public void OpenLevelSelect()
+    {
+        // @todo
+    }
+
+    public void NextLevel()
+    {
+        // @todo
+    }
 }
