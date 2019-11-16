@@ -11,7 +11,6 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public static GameObject gameObjectHit;
     [SerializeField] private Transform parent;
     [SerializeField] private Transform nodesToolbar;
-    [SerializeField] private CanvasGroup solutions;
 
     private GraphicRaycaster GraphicRaycaster { get => nodesToolbar.GetComponentInParent<GraphicRaycaster>(); }
 
