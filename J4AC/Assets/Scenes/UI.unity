@@ -392,6 +392,11 @@ PrefabInstance:
       propertyPath: nodesToolbar
       value: 
       objectReference: {fileID: 2028029710}
+    - target: {fileID: 8855079964530667388, guid: a7584043545a3bf4eaf1f5ee0c56bccc,
+        type: 3}
+      propertyPath: draggables
+      value: 
+      objectReference: {fileID: 378276414}
     - target: {fileID: 579640513377596253, guid: a7584043545a3bf4eaf1f5ee0c56bccc,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -419,6 +424,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7584043545a3bf4eaf1f5ee0c56bccc, type: 3}
+--- !u!1 &378276414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7707969649984712342, guid: b44e38df389c95347b0fce1606998989,
+    type: 3}
+  m_PrefabInstance: {fileID: 7707969649607484584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &416980681
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +851,11 @@ PrefabInstance:
       propertyPath: nodesToolbar
       value: 
       objectReference: {fileID: 2028029710}
+    - target: {fileID: 4831546512951349647, guid: 8484387fb30aca84eb6eaebbc1f23dd6,
+        type: 3}
+      propertyPath: draggables
+      value: 
+      objectReference: {fileID: 378276414}
     - target: {fileID: 5073503419328656732, guid: 8484387fb30aca84eb6eaebbc1f23dd6,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1073,6 +1089,11 @@ PrefabInstance:
       propertyPath: nodesToolbar
       value: 
       objectReference: {fileID: 2028029710}
+    - target: {fileID: 7992497952483262697, guid: 9865ff990e92ad047a9d7540402aa155,
+        type: 3}
+      propertyPath: draggables
+      value: 
+      objectReference: {fileID: 378276414}
     - target: {fileID: 7750311248107086906, guid: 9865ff990e92ad047a9d7540402aa155,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1233,6 +1254,11 @@ PrefabInstance:
       propertyPath: nodesToolbar
       value: 
       objectReference: {fileID: 2028029710}
+    - target: {fileID: 1673943306389212387, guid: 13fbe5caa5b24564f9d0127fc5480b3c,
+        type: 3}
+      propertyPath: draggables
+      value: 
+      objectReference: {fileID: 378276414}
     - target: {fileID: 1323679095041992752, guid: 13fbe5caa5b24564f9d0127fc5480b3c,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1458,6 +1484,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 177.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7707969649984712342, guid: b44e38df389c95347b0fce1606998989,
+        type: 3}
+      propertyPath: m_TagString
+      value: Content
+      objectReference: {fileID: 0}
     - target: {fileID: 7707969649759248815, guid: b44e38df389c95347b0fce1606998989,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1472,6 +1503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707969649704797331, guid: b44e38df389c95347b0fce1606998989,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7707969649704797332, guid: b44e38df389c95347b0fce1606998989,
         type: 3}

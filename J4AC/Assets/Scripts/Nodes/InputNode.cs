@@ -28,15 +28,21 @@ public class InputNode : MonoBehaviour
         get => currentInput.GetComponent<DraggableInput>();
         set
         {
-            inputKey = value.key;
-            Text = value.Text;
+            if (!value)
+            {
+                ResetInput();
+                return;
+            }
+
+            //Text = value.Text;
             if (currentInput)
             {
-                currentInput.GetComponent<DragHandler>().ResetToParent();
-                CurrentInput.Active = true;
+                currentInput.GetComponent<DragHandler>().ResetToContent();
+                CurrentInput.AttachedTo = null;
             }
             currentInput = value.gameObject;
-            value.Active = false;
+            value.AttachedTo = gameObject;
+            inputKey = value.key;
         }
     }
 
@@ -95,7 +101,7 @@ public class InputNode : MonoBehaviour
     {
         Text = "Input";
         inputKey = KeyCode.None;
-        currentInput.GetComponent<DragHandler>().ResetToParent();
+        currentInput.GetComponent<DragHandler>().ResetToContent();
         CurrentInput.Active = true;
         currentInput = null;
         foreach (ActionNode action in actionNodes)

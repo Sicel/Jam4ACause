@@ -20,6 +20,12 @@ public class DropHandler : MonoBehaviour, IDropHandler
         if (!objectDroppedOn)
             return;
 
+        if (objectDroppedOn.tag == "Content")
+        {
+            objectDropped.GetComponent<Draggable>().AttachedTo = null;
+            return;
+        }
+
         InputNode inputNode = objectDroppedOn.GetComponent<InputNode>();
         ActionNode actionNode = objectDroppedOn.GetComponent<ActionNode>();
         DraggableInput draggableInput = objectDropped.GetComponent<DraggableInput>();
@@ -40,7 +46,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
             inputNode.CurrentInput = draggableInput;
         }
 
-        objectDropped.transform.SetParent(objectDroppedOn.transform);
+        objectDropped.GetComponent<DragHandler>().Parent = objectDroppedOn.transform;
         objectDropped.transform.position = objectDroppedOn.transform.position;
     }
 
@@ -52,6 +58,12 @@ public class DropHandler : MonoBehaviour, IDropHandler
 
         foreach (RaycastResult result in results)
         {
+            if (result.gameObject == objectDropped.GetComponent<DragHandler>().Draggables)
+            {
+                objectDroppedOn = result.gameObject;
+                return;
+            }
+
             InputNode inputNode = result.gameObject.GetComponent<InputNode>();
             ActionNode actionNode = result.gameObject.GetComponent<ActionNode>();
 

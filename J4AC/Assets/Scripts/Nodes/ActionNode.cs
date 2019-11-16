@@ -44,15 +44,21 @@ public class ActionNode : MonoBehaviour
             if (locked)
                 return;
 
-            ActionEvent = value.action;
+            if (!value)
+            {
+                ResetAction();
+                return;
+            }
+
             Text = value.Text;
             if (currentAction)
             {
-                currentAction.GetComponent<DragHandler>().ResetToParent();
-                CurrentAction.Active = true;
+                currentAction.GetComponent<DragHandler>().ResetToContent();
+                CurrentAction.AttachedTo = null;
             }
             currentAction = value.gameObject;
-            value.Active = false;
+            value.AttachedTo = gameObject;
+            ActionEvent = value.action;
         }
     }
 
@@ -71,8 +77,11 @@ public class ActionNode : MonoBehaviour
     {
         Text = "Action";
         actionEvent = null;
-        currentAction.GetComponent<DragHandler>().ResetToParent();
-        CurrentAction.Active = true;
+        if (currentAction)
+        {
+            currentAction.GetComponent<DragHandler>().ResetToContent();
+            CurrentAction.Active = true;
+        }
         currentAction = null;
     }
 }

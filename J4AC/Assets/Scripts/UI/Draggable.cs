@@ -6,6 +6,35 @@ using TMPro;
 public class Draggable : MonoBehaviour
 {
     [SerializeField] private bool active = true;
+    [SerializeField] private GameObject attachedTo;
+
+    public GameObject AttachedTo
+    {
+        get => attachedTo;
+        set
+        {
+            if (value)
+            {
+                attachedTo = value;
+                return;
+            }
+
+            gameObject.GetComponent<DragHandler>().Parent = null;
+
+            if (attachedTo)
+            {
+                InputNode input = attachedTo.GetComponent<InputNode>();
+                ActionNode action = attachedTo.GetComponent<ActionNode>();
+
+                if (input)
+                    input.CurrentInput = null;
+                else if (action)
+                    action.CurrentAction = null;
+            }
+            attachedTo = value;
+
+        }
+    }
 
     /// <summary>
     /// Property telling whether or not the object is able to be dragged
