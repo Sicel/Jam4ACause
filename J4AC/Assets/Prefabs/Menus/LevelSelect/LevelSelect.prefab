@@ -456,7 +456,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &716288975404577983
 MonoBehaviour:
@@ -698,7 +698,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afabd09a655ed0d4f8d31e77b60f1860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultEnabled: 0
   DropdownObject: {fileID: 716288975815834088}
+  CurrLevel: 0
 --- !u!1 &716288975444504013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1142,12 @@ MonoBehaviour:
     - m_Text: Level 2
       m_Image: {fileID: 0}
     - m_Text: Level 3
+      m_Image: {fileID: 0}
+    - m_Text: Level 4
+      m_Image: {fileID: 0}
+    - m_Text: Level 5
+      m_Image: {fileID: 0}
+    - m_Text: Level 6
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

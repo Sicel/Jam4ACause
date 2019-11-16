@@ -11,8 +11,10 @@ public class GoalTile : Tile
     private bool hasThrownGoalEvent = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         hasThrownGoalEvent = false;
 
         // Add this tile for tracking through the LevelGrid
@@ -21,8 +23,10 @@ public class GoalTile : Tile
 
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         // // Check if the player is in me.
         bool isPlayerInGoal = LevelGrid.CurrLevelGrid.Player.location == location;
 
@@ -41,5 +45,15 @@ public class GoalTile : Tile
     public override bool CanGoThrough()
     {
         return true;
+    }
+
+    /// <summary>
+    /// Reset this tile to its beginning state.
+    /// </summary>
+    public override void ResetTile()
+    {
+        base.ResetTile();
+        
+        hasThrownGoalEvent = false;
     }
 }
