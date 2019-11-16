@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 /// <summary>
 /// An action node that will keep track of the current event and whether or not it's locked into place
@@ -40,6 +41,9 @@ public class ActionNode : MonoBehaviour
         get => currentAction.GetComponent<DraggableAction>();
         set
         {
+            if (locked)
+                return;
+
             ActionEvent = value.action;
             Text = value.Text;
             if (currentAction)
@@ -61,5 +65,14 @@ public class ActionNode : MonoBehaviour
         {
             actionEvent.Raise();
         }
+    }
+
+    public void ResetAction()
+    {
+        Text = "Action";
+        actionEvent = null;
+        currentAction.GetComponent<DragHandler>().ResetToParent();
+        CurrentAction.Active = true;
+        currentAction = null;
     }
 }

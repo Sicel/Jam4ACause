@@ -62,4 +62,12 @@ public class LevelNodes : MonoBehaviour
     {
         checkingForInput = true;
     }
+
+    public void ResetNodes()
+    {
+        foreach (InputNode input in inputNodes)
+        {
+            input.ResetInput();
+        }
+    }
 }

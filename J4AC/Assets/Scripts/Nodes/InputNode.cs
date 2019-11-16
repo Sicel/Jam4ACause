@@ -91,6 +91,19 @@ public class InputNode : MonoBehaviour
         StartCoroutine(ActionsCoroutine());
     }
 
+    public void ResetInput()
+    {
+        Text = "Input";
+        inputKey = KeyCode.None;
+        currentInput.GetComponent<DragHandler>().ResetToParent();
+        CurrentInput.Active = true;
+        currentInput = null;
+        foreach (ActionNode action in actionNodes)
+        {
+            action.ResetAction();
+        }
+    }
+
     /// <summary>
     /// Coroutine to trigger each action with a delay between them
     /// </summary>
