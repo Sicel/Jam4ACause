@@ -60,7 +60,7 @@ public class Tile : MonoBehaviour
         if (LevelGrid.CurrLevelGrid != null)
             SizePerUnit = LevelGrid.CurrLevelGrid.SizePerUnit;
 
-        this.transform.localPosition = new Vector3(location.x * SizePerUnit, location.y * SizePerUnit, transform.localPosition.z);
+        this.transform.localPosition = new Vector3(location.x * SizePerUnit, location.y * SizePerUnit, transform.position.z);
     }
 
     /// <summary>
