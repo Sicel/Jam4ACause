@@ -12,6 +12,8 @@ public class ActionNode : MonoBehaviour
     private GameEvent actionEvent = null;
     [SerializeField]
     private bool locked = false;
+    [SerializeField]
+    private GameObject currentAction;
 
     /// <summary>
     /// Property to get and set the current action event
@@ -27,7 +29,26 @@ public class ActionNode : MonoBehaviour
             }
         }
     }
-    public TextMeshProUGUI TextMesh { get => gameObject.GetComponent<TextMeshProUGUI>(); }
+    public string Text
+    {
+        get => gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        set => gameObject.GetComponentInChildren<TextMeshProUGUI>().text = value;
+    }
+
+    public DraggableAction CurrentAction
+    {
+        get => currentAction.GetComponent<DraggableAction>();
+        set
+        {
+            ActionEvent = value.action;
+            Text = value.Text;
+            currentAction = value.gameObject;
+            currentAction.GetComponent<DragHandler>().EndDrag();
+            if (currentAction)
+                CurrentAction.Active = true;
+            value.Active = false;
+        }
+    }
 
     /// <summary>
     /// Function to trigger the game event for the action node

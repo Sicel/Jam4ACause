@@ -8,11 +8,13 @@ public class DropHandler : MonoBehaviour, IDropHandler
 {
     private GameObject objectDroppedOn;
     private GameObject objectDropped;
+    public static GameObject lastDropped;
     private LevelNodes LevelNodes { get => gameObject.GetComponent<LevelNodes>(); }
     private GraphicRaycaster GraphicRaycaster { get => gameObject.GetComponentInParent<GraphicRaycaster>(); }
 
     public void OnDrop(PointerEventData eventData)
     {
+        objectDroppedOn = null;
         CheckChildren(eventData);
 
         if (!objectDroppedOn)
@@ -28,14 +30,14 @@ public class DropHandler : MonoBehaviour, IDropHandler
             if (!actionNode)
                 return;
 
-            actionNode.ActionEvent = draggableAction.action;
+            actionNode.CurrentAction = draggableAction;
         }
         else if (draggableInput)
         {
             if (!inputNode)
                 return;
 
-            inputNode.InputKey = draggableInput.key;
+            inputNode.CurrentInput = draggableInput;
         }
     }
 
