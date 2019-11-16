@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputNodes:
   - {fileID: 0}
+  playPauseText: {fileID: 0}
 --- !u!114 &7707969649211204538
 MonoBehaviour:
   m_ObjectHideFlags: 0
