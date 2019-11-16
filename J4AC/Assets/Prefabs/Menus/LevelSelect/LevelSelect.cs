@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelSelect : MonoBehaviour
+public class LevelSelect : Menu
 {
     public GameObject DropdownObject;
     private TMPro.TMP_Dropdown dropdown;
