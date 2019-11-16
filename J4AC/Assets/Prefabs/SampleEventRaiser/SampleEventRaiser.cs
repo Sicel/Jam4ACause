@@ -35,27 +35,32 @@ public class SampleEventRaiser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MoveLeft.Raise();
+            if (MoveLeft != null)
+                MoveLeft.Raise();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MoveRight.Raise();
+            if (MoveRight != null)
+                MoveRight.Raise();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            MoveUp.Raise();
+            if (MoveUp != null)
+                MoveUp.Raise();
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            MoveDown.Raise();
+            if (MoveDown != null)
+                MoveDown.Raise();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DoorToggle.Raise();
+            if (DoorToggle != null)
+                DoorToggle.Raise();
         }
     }
 }

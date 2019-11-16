@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GoalTile : Tile
 {
+
+    [Tooltip("The GameEvent to raise when the player has reached me.")]
+    public GameEvent GoalReachedEvent;
+
     private bool hasThrownGoalEvent = false;
 
     // Start is called before the first frame update
@@ -24,8 +28,10 @@ public class GoalTile : Tile
 
         if (!hasThrownGoalEvent && isPlayerInGoal)
         {
-            // @todo 
             hasThrownGoalEvent = true;
+
+            if (GoalReachedEvent != null)
+                GoalReachedEvent.Raise();
 
             Debug.Log("Goooooooaaaaaallll.\n");
         }
