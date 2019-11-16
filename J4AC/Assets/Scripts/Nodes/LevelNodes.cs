@@ -6,11 +6,33 @@ public class LevelNodes : MonoBehaviour
 {
     [SerializeField]
     private InputNode[] inputNodes = new InputNode[0];
-    private bool checkingForInput = false;
+    private bool checkingForInput = true;
+    private Coroutine activeGameCoroutine;
 
     public InputNode[] InputNodes { get => InputNodes; }
 
-    private void Update()
+    /// <summary>
+    /// Starts the active game coroutine
+    /// </summary>
+    public void PlayGame()
+    {
+        activeGameCoroutine = StartCoroutine(GameActive());
+    }
+
+    /// <summary>
+    /// Stops the active game coroutine
+    /// </summary>
+    public void PauseGame()
+    {
+        StopCoroutine(activeGameCoroutine);
+    }
+
+    /// <summary>
+    /// Enumerator that will check for input (while the game is playing and another action is not currently occurring)
+    /// It will trigger any actions properly set up
+    /// </summary>
+    /// <returns>An enumerator</returns>
+    private IEnumerator GameActive()
     {
         if(checkingForInput)
         {
@@ -24,12 +46,13 @@ public class LevelNodes : MonoBehaviour
                     {
                         checkingForInput = false;
                         inputNodes[i].TriggerActions();
-                        Invoke("ReEnableInput", (0.3f * inputNodes[i].ActionNodeCount) + 0.1f);
-                        return;
+                        Invoke("ReEnableInput", (0.3f * inputNodes[i].ActionNodeCount) + 0.01f);
+                        break;
                     }
                 }
             }
         }
+        yield return null;
     }
 
     /// <summary>
