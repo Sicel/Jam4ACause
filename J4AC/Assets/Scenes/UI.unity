@@ -451,11 +451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 108863548}
     m_Modifications:
-    - target: {fileID: 144795105378702697, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
-        type: 3}
-      propertyPath: key
-      value: 27
-      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: inputKey
       value: 27
@@ -464,6 +459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: D_Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 144795105378702697, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: key
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8983991961169630199, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
@@ -588,12 +588,12 @@ PrefabInstance:
     - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
@@ -603,12 +603,42 @@ PrefabInstance:
     - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_text
+      value: R.Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525096936544336401, guid: 79ab0d90eddba7e45ad4ec31b740f2a5,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79ab0d90eddba7e45ad4ec31b740f2a5, type: 3}
@@ -1263,8 +1293,17 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6751011259681200813, guid: 3683ddb5aff29484fad432788a1a556c, type: 3}
+    - target: {fileID: 1186740376015941900, guid: 3683ddb5aff29484fad432788a1a556c,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186740376015941900, guid: 3683ddb5aff29484fad432788a1a556c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3683ddb5aff29484fad432788a1a556c, type: 3}
 --- !u!224 &1336829529 stripped
 RectTransform:
@@ -1540,8 +1579,17 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5856557561945415904, guid: 3dae1700afcfa674286ae6b2264f2381, type: 3}
+    - target: {fileID: 6184497246965779724, guid: 3dae1700afcfa674286ae6b2264f2381,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184497246965779724, guid: 3dae1700afcfa674286ae6b2264f2381,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dae1700afcfa674286ae6b2264f2381, type: 3}
 --- !u!224 &1731506540 stripped
 RectTransform:
@@ -2035,7 +2083,7 @@ PrefabInstance:
     - target: {fileID: 8758768017264719838, guid: e0f52d29db073f5488fbcb845bf054c1,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8758768017264719838, guid: e0f52d29db073f5488fbcb845bf054c1,
         type: 3}
@@ -2056,6 +2104,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758768017264719838, guid: e0f52d29db073f5488fbcb845bf054c1,
+        type: 3}
+      propertyPath: m_text
+      value: Move Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758768017264719838, guid: e0f52d29db073f5488fbcb845bf054c1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f52d29db073f5488fbcb845bf054c1, type: 3}

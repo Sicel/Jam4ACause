@@ -12,10 +12,31 @@ public class InputNode : MonoBehaviour
     private KeyCode inputKey = KeyCode.None;
     [SerializeField]
     private ActionNode[] actionNodes = new ActionNode[0];
+    [SerializeField]
+    private GameObject currentInput;
     private WaitForSeconds wait = new WaitForSeconds(0.3f);
 
     public ActionNode[] ActionNodes { get => actionNodes; }
-    public TextMeshProUGUI TextMesh { get => gameObject.GetComponent<TextMeshProUGUI>(); }
+    public string Text
+    {
+        get => gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        set => gameObject.GetComponentInChildren<TextMeshProUGUI>().text = value;
+    }
+
+    public DraggableInput CurrentInput
+    {
+        get => currentInput.GetComponent<DraggableInput>();
+        set
+        {
+            inputKey = value.key;
+            Text = value.Text;
+            currentInput = value.gameObject;
+            currentInput.GetComponent<DragHandler>().EndDrag();
+            if (currentInput)
+                CurrentInput.Active = true;
+            value.Active = false;
+        }
+    }
 
     /// <summary>
     /// Property to get and set the input key

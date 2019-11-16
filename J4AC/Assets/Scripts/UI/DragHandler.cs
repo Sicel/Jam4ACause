@@ -18,9 +18,9 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         objectDragged = gameObject;
+
         transform.SetParent(nodesToolbar);
         gameObjectHit = null;
-        //solutions.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -30,8 +30,12 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        objectDragged = null;
-
+        EndDrag();
+    }
+    
+    public void EndDrag()
+    {
         transform.SetParent(parent);
+        objectDragged = null;
     }
 }
