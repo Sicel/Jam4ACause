@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelNodes : MonoBehaviour
 {
     [SerializeField]
     private InputNode[] inputNodes = new InputNode[0];
+    [SerializeField]
+    private TextMeshProUGUI playPauseText = null;
     private bool checkingForInput = true;
     private Coroutine activeGameCoroutine;
 
@@ -16,6 +19,10 @@ public class LevelNodes : MonoBehaviour
     /// </summary>
     public void PlayGame()
     {
+        if(playPauseText)
+        {
+            playPauseText.text = "Playing";
+        }
         activeGameCoroutine = StartCoroutine(GameActive());
     }
 
@@ -24,6 +31,10 @@ public class LevelNodes : MonoBehaviour
     /// </summary>
     public void PauseGame()
     {
+        if (playPauseText)
+        {
+            playPauseText.text = "Paused";
+        }
         StopCoroutine(activeGameCoroutine);
     }
 
@@ -72,5 +83,7 @@ public class LevelNodes : MonoBehaviour
         {
             input.ResetInput();
         }
+
+        PauseGame();
     }
 }

@@ -20,8 +20,10 @@ public class DoorTile : Tile
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         // Add this tile for tracking through the LevelGrid
         LevelGrid.CurrLevelGrid.AddTile(this.gameObject);
 
@@ -33,8 +35,10 @@ public class DoorTile : Tile
     /// <summary>
     /// Update is called once per frame
     /// </summary>
-    void Update()
+    protected virtual void Update()
     {
+        base.Update();
+
         // Update which sprite/gameobject is displayed depending on whether or not the door is open
         if (doorOpen != null)
             doorOpen.SetActive(isDoorOpen);

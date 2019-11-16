@@ -4,30 +4,38 @@ using UnityEngine;
 
 public class ClearMenu : Menu
 {
+    public GameEvent ResetEvent;
+
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
     }
 
     public void ReplayLevel()
     {
-        // @todo
+        // Throw reset events
+        if (ResetEvent != null)
+            ResetEvent.Raise();
+
+        HideMenu();
     }
 
     public void OpenLevelSelect()
     {
-        // @todo
+        LevelSelect.ActiveLevelSelectMenu.ShowMenu();
+        HideMenu();
     }
 
     public void NextLevel()
     {
-        // @todo
+        LevelSelect.ActiveLevelSelectMenu.SetNextLevel(LevelSelect.ActiveLevelSelectMenu.CurrLevel + 1);
+        LevelSelect.ActiveLevelSelectMenu.LoadLevel();
     }
 }

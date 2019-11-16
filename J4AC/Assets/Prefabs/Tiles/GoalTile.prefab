@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   location: {x: 9, y: 0}
   SizePerUnit: 1
+  GoalReachedEvent: {fileID: 11400000, guid: 06cf1a1d1576d664c850ee7b1f6557d1, type: 2}
 --- !u!1 &3087877277094591521
 GameObject:
   m_ObjectHideFlags: 0

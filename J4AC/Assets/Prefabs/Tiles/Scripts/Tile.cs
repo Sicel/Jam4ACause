@@ -14,13 +14,13 @@ public class Tile : MonoBehaviour
     private Vector2Int origLocation;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         origLocation = location;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
