@@ -30,10 +30,12 @@ public class InputNode : MonoBehaviour
         {
             inputKey = value.key;
             Text = value.Text;
-            currentInput = value.gameObject;
-            currentInput.GetComponent<DragHandler>().EndDrag();
             if (currentInput)
+            {
+                currentInput.GetComponent<DragHandler>().ResetToParent();
                 CurrentInput.Active = true;
+            }
+            currentInput = value.gameObject;
             value.Active = false;
         }
     }

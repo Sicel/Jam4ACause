@@ -8,18 +8,21 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 {
     public static Vector3 mousePos;
     public static GameObject objectDragged;
-    public static GameObject gameObjectHit;
-    [SerializeField] private Transform parent;
+    [SerializeField] private Transform contentTab;
     [SerializeField] private Transform nodesToolbar;
 
     private GraphicRaycaster GraphicRaycaster { get => nodesToolbar.GetComponentInParent<GraphicRaycaster>(); }
+
+    private void Start()
+    {
+        contentTab = transform.parent;
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         objectDragged = gameObject;
 
         transform.SetParent(nodesToolbar);
-        gameObjectHit = null;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -29,12 +32,12 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        EndDrag();
+        ResetToParent();
     }
-    
-    public void EndDrag()
+
+    public void ResetToParent()
     {
-        transform.SetParent(parent);
+        transform.SetParent(contentTab);
         objectDragged = null;
     }
 }

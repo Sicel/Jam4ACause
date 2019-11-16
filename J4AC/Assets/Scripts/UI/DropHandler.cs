@@ -39,6 +39,9 @@ public class DropHandler : MonoBehaviour, IDropHandler
 
             inputNode.CurrentInput = draggableInput;
         }
+
+        objectDropped.transform.SetParent(objectDroppedOn.transform);
+        objectDropped.transform.position = objectDroppedOn.transform.position;
     }
 
     private void CheckChildren(PointerEventData eventData)

@@ -43,9 +43,11 @@ public class ActionNode : MonoBehaviour
             ActionEvent = value.action;
             Text = value.Text;
             currentAction = value.gameObject;
-            currentAction.GetComponent<DragHandler>().EndDrag();
             if (currentAction)
+            {
+                currentAction.GetComponent<DragHandler>().ResetToParent();
                 CurrentAction.Active = true;
+            }
             value.Active = false;
         }
     }
