@@ -34,25 +34,28 @@ public class LevelNodes : MonoBehaviour
     /// <returns>An enumerator</returns>
     private IEnumerator GameActive()
     {
-        if(checkingForInput)
+        while(true)
         {
-            //Check to see if any of the input nodes have their input pressed
-            for(int i = 0; i < inputNodes.Length; i++)
+            if (checkingForInput)
             {
-                if(inputNodes[i].InputKey != KeyCode.None)
+                //Check to see if any of the input nodes have their input pressed
+                for (int i = 0; i < inputNodes.Length; i++)
                 {
-                    //If the input node's key is pressed and the actions are filled, trigger them
-                    if(Input.GetKeyDown(inputNodes[i].InputKey) && inputNodes[i].EnsureActionsAreFilled())
+                    if (inputNodes[i].InputKey != KeyCode.None)
                     {
-                        checkingForInput = false;
-                        inputNodes[i].TriggerActions();
-                        Invoke("ReEnableInput", (0.3f * inputNodes[i].ActionNodeCount) + 0.01f);
-                        break;
+                        //If the input node's key is pressed and the actions are filled, trigger them
+                        if (Input.GetKeyDown(inputNodes[i].InputKey) && inputNodes[i].EnsureActionsAreFilled())
+                        {
+                            checkingForInput = false;
+                            inputNodes[i].TriggerActions();
+                            Invoke("ReEnableInput", (0.3f * inputNodes[i].ActionNodeCount) + 0.01f);
+                            break;
+                        }
                     }
                 }
             }
+            yield return null;
         }
-        yield return null;
     }
 
     /// <summary>
