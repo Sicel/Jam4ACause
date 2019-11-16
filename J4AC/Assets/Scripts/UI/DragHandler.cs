@@ -15,7 +15,6 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     private void Start()
     {
-        contentTab = transform.parent;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
