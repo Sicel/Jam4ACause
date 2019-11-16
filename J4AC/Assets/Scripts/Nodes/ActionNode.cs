@@ -42,12 +42,12 @@ public class ActionNode : MonoBehaviour
         {
             ActionEvent = value.action;
             Text = value.Text;
-            currentAction = value.gameObject;
             if (currentAction)
             {
                 currentAction.GetComponent<DragHandler>().ResetToParent();
                 CurrentAction.Active = true;
             }
+            currentAction = value.gameObject;
             value.Active = false;
         }
     }

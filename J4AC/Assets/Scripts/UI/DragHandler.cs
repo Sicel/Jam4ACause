@@ -13,10 +13,6 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     private GraphicRaycaster GraphicRaycaster { get => nodesToolbar.GetComponentInParent<GraphicRaycaster>(); }
 
-    private void Start()
-    {
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         objectDragged = gameObject;
