@@ -43,6 +43,7 @@ public class PlayerTile : Tile
             if (!isLerpingToInvalidTile)
             {
                 Vector3 position = lerpSource + (movementLerpTimer / movementLerpTime) * (lerpDestination - lerpSource);
+
                 transform.localPosition = position;
             }
             // Otherwise (nudge against it)s
@@ -64,7 +65,7 @@ public class PlayerTile : Tile
                         * (lerpSource - (lerpSource + invalidLerpNudgeRatio * (lerpDestination - lerpSource)));
                 }
 
-
+                position.z = transform.localPosition.z;
                 transform.localPosition = position;
             }
 
@@ -74,6 +75,8 @@ public class PlayerTile : Tile
                 isLerping = false;
             }
         }
+
+        // Move to front
     }
 
     public override bool CanGoThrough()
