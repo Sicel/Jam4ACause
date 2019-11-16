@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 7707969649984712424}
   m_Layer: 5
   m_Name: Draggables
-  m_TagString: Untagged
+  m_TagString: Content
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1133,7 +1133,7 @@ PrefabInstance:
     - target: {fileID: 1876604804007730158, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
         type: 3}
       propertyPath: m_TagString
-      value: Content
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1876604804007730153, guid: 96c26f848aa1afc4bb43e7feb6a720c3,
         type: 3}
