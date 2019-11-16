@@ -131,7 +131,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5, y: 5, z: 5, w: 5}
   m_textInfo:
     textComponent: {fileID: 8758768017264719838}
     characterCount: 8
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d8365794e9934991f6ae502849a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  nodesToolbar: {fileID: 0}
-  solutions: {fileID: 0}
+  parent: {fileID: 1876604804007730153, guid: 96c26f848aa1afc4bb43e7feb6a720c3, type: 3}
+  nodesToolbar: {fileID: 7707969649211204518, guid: b44e38df389c95347b0fce1606998989,
+    type: 3}
 --- !u!114 &-6307656725644562001
 MonoBehaviour:
   m_ObjectHideFlags: 0
