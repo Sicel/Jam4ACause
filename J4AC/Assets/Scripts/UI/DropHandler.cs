@@ -37,6 +37,8 @@ public class DropHandler : MonoBehaviour, IDropHandler
                 return;
 
             actionNode.CurrentAction = draggableAction;
+            if (!actionNode.CurrentAction)
+                return;
         }
         else if (draggableInput)
         {

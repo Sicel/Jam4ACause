@@ -99,7 +99,7 @@ public class InputNode : MonoBehaviour
 
     public void ResetInput()
     {
-        Text = "Input";
+        //Text = "Input";
         inputKey = KeyCode.None;
         currentInput.GetComponent<DragHandler>().ResetToContent();
         CurrentInput.Active = true;

@@ -38,7 +38,13 @@ public class ActionNode : MonoBehaviour
 
     public DraggableAction CurrentAction
     {
-        get => currentAction.GetComponent<DraggableAction>();
+        get
+        {
+            if (currentAction)
+                return currentAction.GetComponent<DraggableAction>();
+
+            return null;
+        }
         set
         {
             if (locked)
@@ -75,7 +81,7 @@ public class ActionNode : MonoBehaviour
 
     public void ResetAction()
     {
-        Text = "Action";
+        //Text = "Action";
         actionEvent = null;
         if (currentAction)
         {
