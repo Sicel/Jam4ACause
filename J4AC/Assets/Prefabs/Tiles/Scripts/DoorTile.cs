@@ -22,6 +22,10 @@ public class DoorTile : Tile
     /// </summary>
     void Start()
     {
+        // Add this tile for tracking through the LevelGrid
+        LevelGrid.CurrLevelGrid.AddTile(this.gameObject);
+
+        // Initialize state
         isDoorOpen = doorDefaultOpened;
     }
 

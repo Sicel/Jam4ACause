@@ -7,6 +7,9 @@ public class Tile : MonoBehaviour
     [Tooltip("The location of this tile on the grid in LevelGrid.")]
     public Vector2Int location;
 
+    [Tooltip("The length of a single grid unit, i.e. 1.0f = 1 grid unit. Use this when relative positioning.")]
+    public float SizePerUnit = 1.0f;
+
     // Keep track of original position, especially if this is a moving tile, ie Player.
     private Vector2Int origLocation;
 
@@ -54,7 +57,10 @@ public class Tile : MonoBehaviour
     public void SnapToTile()
     {
         // Snap tiles relative to parent object containing all grid elements.
-        this.transform.localPosition = new Vector3(location.x * LevelGrid.CurrLevelGrid.SizePerUnit, location.y * LevelGrid.CurrLevelGrid.SizePerUnit, 0f);
+        if (LevelGrid.CurrLevelGrid != null)
+            SizePerUnit = LevelGrid.CurrLevelGrid.SizePerUnit;
+
+        this.transform.localPosition = new Vector3(location.x * SizePerUnit, location.y * SizePerUnit, transform.localPosition.z);
     }
 
     /// <summary>
@@ -67,4 +73,6 @@ public class Tile : MonoBehaviour
 
         SnapToTile();
     }
+
+
 }
